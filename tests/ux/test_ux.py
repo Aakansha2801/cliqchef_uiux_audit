@@ -206,7 +206,7 @@ class TestErrorHandling:
         page.on("console", lambda msg: errors.append(msg.text) if msg.type == "error" else None)
 
         # Reload to capture errors
-        page.reload(wait_until="networkidle")
+        page.reload(wait_until="load")
         page.wait_for_timeout(2000)
 
         # Filter out known acceptable errors
