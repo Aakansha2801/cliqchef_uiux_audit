@@ -25,10 +25,13 @@ class BasePage:
     # ─── Navigation ───
 
     def goto(self, path: str = "/") -> None:
-        self.page.goto(f"{BASE_URL}{path}", wait_until="networkidle")
+        self.page.goto(f"{BASE_URL}{path}", wait_until="load", timeout=60000)
+        # Wait for DOM to be interactive (not networkidle — sites with
+        # analytics/WebSocket never reach networkidle)
+        self.page.wait_for_load_state("domcontentloaded")
 
     def wait_for_page_load(self) -> None:
-        self.page.wait_for_load_state("networkidle")
+        self.page.wait_for_load_state("domcontentloaded")
 
     def current_url(self) -> str:
         return self.page.url

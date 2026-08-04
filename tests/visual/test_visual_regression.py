@@ -138,6 +138,6 @@ class TestComponentConsistency:
         if dark_toggle.count() > 0:
             dark_toggle.first.click()
             page.wait_for_timeout(500)
-            page.wait_for_load_state("networkidle")
+            page.wait_for_load_state("domcontentloaded")
             # Page should still have content
             assert page.locator("body").inner_html(), "Page empty after dark mode toggle"
