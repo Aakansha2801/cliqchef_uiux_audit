@@ -1,0 +1,7 @@
+# CliqChef.ai UI/UX Audit — Dev Dependencies
+# Install: pip install -r requirements-dev.txt
+
+ruff>=0.6.0
+mypy>=1.11.0
+pre-commit>=3.8.0
+pytest-cov>=5.0.0
