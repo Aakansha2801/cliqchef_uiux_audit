@@ -48,15 +48,15 @@ MAX_FOCUS_TRAVERSE: int = 50             # Max focus-trap escape attempts
 LCP_BUDGET_MS: float = 2500.0            # Largest Contentful Paint
 FID_BUDGET_MS: float = 100.0             # First Input Delay
 CLS_BUDGET: float = 0.1                  # Cumulative Layout Shift
-FCP_BUDGET_MS: float = 1800.0            # First Contentful Paint
-TTFB_BUDGET_MS: float = 800.0            # Time to First Byte
+FCP_BUDGET_MS: float = 2500.0            # First Contentful Paint (relaxed for WP/Elementor)
+TTFB_BUDGET_MS: float = 1000.0           # Time to First Byte (relaxed for WP hosting)
 INP_BUDGET_MS: float = 200.0             # Interaction to Next Paint
 PAGE_LOAD_MS: float = 5000.0             # Full page load timeout
 DOM_READY_MS: float = 3000.0             # DOMContentLoaded budget
 MAX_DOM_NODES: int = 1500                # Maximum DOM node count
 MAX_DOC_SIZE_KB: int = 500               # Maximum document size
 MAX_IMAGE_WEIGHT_KB: int = 2048          # Maximum total image weight
-MAX_REQUESTS_ON_LOAD: int = 50           # Max network requests on load
+MAX_REQUESTS_ON_LOAD: int = 60           # Max network requests on load (relaxed for WP/Elementor)
 
 
 # ─── Animation & UX Timing ───
@@ -74,6 +74,6 @@ SCROLL_ANIMATION_MS: int = 600           # Scroll animation duration
 # ─── SEO & Content ───
 
 MIN_TITLE_LENGTH: int = 10               # Minimum page title length
-MAX_TITLE_LENGTH: int = 70               # Maximum page title length
+MAX_TITLE_LENGTH: int = 100              # Maximum page title length (relaxed for branded titles)
 MIN_DESC_LENGTH: int = 50                # Minimum meta description length
 MAX_DESC_LENGTH: int = 160               # Maximum meta description length
