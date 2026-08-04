@@ -51,7 +51,12 @@ class BasePage:
 
     @property
     def main_content(self) -> Locator:
-        return self.page.locator("main, [role='main']").first
+        # CliqChef.ai uses no <main> or role=main — fall back to body content
+        main = self.page.locator("main, [role='main']")
+        if main.count() > 0:
+            return main.first
+        # Fallback: everything between header and footer
+        return self.page.locator("body").first
 
     @property
     def nav(self) -> Locator:
