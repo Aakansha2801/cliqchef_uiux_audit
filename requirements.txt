@@ -1,0 +1,18 @@
+# CliqChef.ai UI/UX Audit — Python Dependencies
+# Install: pip install -r requirements.txt
+
+# ─── Core Testing ───
+playwright>=1.48.0
+pytest>=8.3.0
+pytest-playwright>=0.5.0
+pytest-xdist>=3.6.0
+pytest-html>=4.1.0
+pytest-asyncio>=0.24.0
+allure-pytest>=2.13.0
+
+# ─── Utilities ───
+Pillow>=10.4.0
+pydantic>=2.9.0
+
+# ─── Dev / Lint (optional) ───
+# pip install -r requirements.txt -r requirements-dev.txt
